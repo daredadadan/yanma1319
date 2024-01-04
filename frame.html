@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>framepage</title>
+    <link rel="stylesheet" href="frame.css">
+</head>
+<body>
+    <main>
+    <h2 id="date"></h2>
+    <h3 id="time"></h3>
+    <a href="1319.html" target="_top">当サイト始まりの地(隠し機能あり)</a><br>
+    </main>
+    <script>
+        var datedoc = document.getElementById('date');
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth()+1;
+        var date = now.getDate();
+        datedoc.innerHTML = year + '年' + month + '月' + date + '日';
+
+        setInterval(() =>{
+            var timedoc = document.getElementById('time');
+            var nowtime = new Date();
+            var timehour = nowtime.getHours();
+            var timeminutes = nowtime.getMinutes();
+            var timeseconds = nowtime.getSeconds();
+            timedoc.innerHTML = timehour + ':' + timeminutes + '.' + timeseconds;
+        },1000);
+    </script>
+</body>
+</html>
