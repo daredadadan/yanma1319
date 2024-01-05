@@ -1,0 +1,44 @@
+h1{
+    text-align: center;
+    color: white;
+    background-color: rgb(29, 53, 119);
+}
+
+p{
+    text-align: center;
+    font-size: large;
+}
+
+.slot{
+    letter-spacing: 0;
+    margin: auto;
+    width: 42.5vw;
+    height: 75px;
+    overflow: hidden;
+}
+
+.frame{
+    display: flex;
+    width: 85vw;
+}
+
+.roulette_container{
+    display: block;
+}
+
+button{
+    background-color: beige;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 35vh;
+}
+
+.reels{
+    text-align: center;
+    background-color: white;
+    font-size: 75px;
+    margin: 0;
+    width: 10vw;
+    border: 1px black solid;
+    overflow: hidden;
+}

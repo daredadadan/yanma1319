@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap');
+
 body{
     background-color: aliceblue;
     padding: 0;
     margin: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-family: 'BIZ UDPMincho', serif;
+}
+
+.logo{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline rgb(50, 127, 235);
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    background-color: #263f3c;
+    text-align: center;
 }
 
 .center{
@@ -17,8 +35,8 @@ marquee > a {
     color: rgb(255, 208, 0);
 }
 
-iframe{
-    background-color: aqua;
+.left{
+    background-color: rgb(10, 86, 141);
     height: 100vh;
     width: 15%;
     border: solid 2px gray;
@@ -40,4 +58,67 @@ iframe{
 
 .news{
     border: solid 2px blue;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.li{
+    font-size: xx-large;
+    background-color: #2c3b61;
+    color: white;
+    margin: 0 15vw;
+    border-radius: 15px;
+}
+
+.big{
+    background-color: rgb(57, 84, 148);
+    text-align: center;
+    font-weight: bolder;
+}
+
+footer{
+    padding: 0;
+    margin: 0;
+    font-size: x-large;
+    font-weight: bolder;
+    color: #FFFFFF;
+    background-color: rgb(33, 52, 76);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.flex_main iframe{
+    width: 85vw;
+    height: 85vh;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex_main{
+    display: flex;
+}
+
+.linkimg{
+    width: 15vw;
+    height: 15vw;
+}
+
+video{
+    width: 15vw;
+    height: auto;
+    margin-top: auto;
+}
+
+.btn_center{
+    display: block;
+    margin: auto;
+    text-align: center;
 }

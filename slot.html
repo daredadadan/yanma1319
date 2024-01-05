@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yamakasu.com</title>
+    <link rel="stylesheet" href="slot.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    
+</head>
+<body>
+    <div class="monitor">
+        <iframe class="left" src="frame.html" frameborder="0"></iframe>
+        <div class="main">
+    <h1>数字スロット</h1>
+    <div class="slot">
+        <div class="frame">
+        <div class="frame_over">
+            <ul class="reels">
+                <li id="reel_one"></li>
+            </ul>
+        </div>
+        <div class="frame_over">
+            <ul class="reels">
+                <li id="reel_two"></li>
+            </ul>
+        </div>
+        <div class="frame_over">
+            <ul class="reels">
+                <li id="reel_three"></li>
+            </ul>
+        </div>
+        <div class="frame_over">
+            <ul class="reels">
+                <li id="reel_four"></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn_center slot_start" onclick="time()">start</button>
+        <div class="btn_center slot_stop">
+            <button onclick="one()">1</button>
+            <button onclick="two()">2</button>
+            <button onclick="three()">3</button>
+            <button onclick="four()">4</button>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var sone;
+        var stwo;
+        var sthree;
+        var sfour;
+        function time(){
+            sone = setInterval('var a = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_one\').innerHTML = a;',200);
+            stwo = setInterval('var b = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_two\').innerHTML = b;',200);
+            sthree = setInterval('var c = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_three\').innerHTML = c;',200);
+            sfour = setInterval('var d = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_four\').innerHTML = d;',200);
+        }
+
+        function one(){
+            clearInterval(sone);
+        }
+
+        function two(){
+            clearInterval(stwo);
+        }
+
+        function three(){
+            clearInterval(sthree);
+        }
+
+        function four(){
+            clearInterval(sfour);
+        }
+    </script>
+</body>
+</html>
