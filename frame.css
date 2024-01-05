@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap');
+
+*{
+    font-family: 'BIZ UDPMincho', serif;
+    color: white;
+}
+
+a{
+    font-size: small;
+    text-decoration: none;
+    line-height: 5vh;
+}
