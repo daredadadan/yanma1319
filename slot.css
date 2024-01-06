@@ -13,8 +13,11 @@ p{
     letter-spacing: 0;
     margin: auto;
     width: 42.5vw;
-    height: 75px;
+    height: 110px;
+    margin-bottom: 15px;
     overflow: hidden;
+    background-size: cover;
+    background-position: 0;
 }
 
 .frame{
@@ -41,4 +44,21 @@ button{
     width: 10vw;
     border: 1px black solid;
     overflow: hidden;
+}
+
+.slot_start:disabled{
+    background-color: rgb(100, 103, 79);
+}
+
+.slot_stop button:disabled{
+    background-color: rgb(186, 43, 43);
+}
+
+.slot_reset{
+    width: 5vw;
+    height: 5vw;
+}
+
+.yanma{
+    color: rgb(186, 43, 43);
 }

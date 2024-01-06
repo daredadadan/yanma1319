@@ -9,12 +9,15 @@
 </head>
 <body>
     <main>
-    <h2 id="date"></h2>
-    <h3 id="time"></h3>
-    <a href="index.html" target="_top">■トップページ</a><br>
-    <a href="1319.html" target="_top">■当サイト始まりの地(隠し機能あり)</a><br>
-    <a href="slot.html" target="_top">■数字スロット(仮)</a><br>
-    <a href="ikisaki_create.html" target="_top">■行先の創作物公開コーナー</a><br>
+    <h4 id="date"></h4>
+    <h2>yamakasu.com</h2>
+    <br>
+    <ul class="menu">
+        <li><a href="index.html" target="_top">■TOP</a></li>
+        <li><a href="1319.html" target="_top">■1319</a></li>
+        <li><a href="slot.html" target="_top">■SLOT</a></li>
+        <li><a href="ikisaki_create.html" target="_top">■IKISAKI</a></li>
+    </ul>
     </main>
     <script>
         var datedoc = document.getElementById('date');
@@ -23,15 +26,6 @@
         var month = now.getMonth()+1;
         var date = now.getDate();
         datedoc.innerHTML = year + '年' + month + '月' + date + '日';
-
-        setInterval(() =>{
-            var timedoc = document.getElementById('time');
-            var nowtime = new Date();
-            var timehour = nowtime.getHours();
-            var timeminutes = nowtime.getMinutes();
-            var timeseconds = nowtime.getSeconds();
-            timedoc.innerHTML = timehour + ':' + timeminutes + '.' + timeseconds;
-        },1000);
     </script>
 </body>
 </html>

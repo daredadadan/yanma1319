@@ -11,10 +11,10 @@
 </head>
 <body>
     <div class="monitor">
-        <iframe class="left" src="frame.html" frameborder="0"></iframe>
+        <iframe class="menu" src="frame.html" frameborder="0"></iframe>
         <div class="main">
     <h1>数字スロット</h1>
-    <div class="slot">
+    <div id="slot" class="slot">
         <div class="frame">
         <div class="frame_over">
             <ul class="reels">
@@ -39,44 +39,113 @@
         </div>
     </div>
     <div>
-        <button class="btn_center slot_start" onclick="time()">start</button>
+        <button class="btn_center slot_start" id="s_btn" onclick="time()">start</button>
         <div class="btn_center slot_stop">
-            <button onclick="one()">1</button>
-            <button onclick="two()">2</button>
-            <button onclick="three()">3</button>
-            <button onclick="four()">4</button>
+            <button id="stop_btn_one" onclick="one()">1</button>
+            <button id="stop_btn_two" onclick="two()">2</button>
+            <button id="stop_btn_three" onclick="three()">3</button>
+            <button id="stop_btn_four" onclick="four()">4</button>
         </div>
+        <button class="btn_center slot_reset" id="s_btn" onclick="reset()">reset</button>
     </div>
     </div>
     </div>
+    <footer>当サイトは特定の人物を批判・誹謗中傷する意図はありません。ただのネタサイトです。<br><span style="font-size: small;">©2024 ikisaki</span></footer>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        var start_btn = document.getElementById('s_btn');
+        var stop_btn_one = document.getElementById('stop_btn_one');
+        var stop_btn_two = document.getElementById('stop_btn_two');
+        var stop_btn_three = document.getElementById('stop_btn_three');
+        var stop_btn_four = document.getElementById('stop_btn_four');
         var sone;
         var stwo;
         var sthree;
         var sfour;
+        var one_value = document.getElementById('reel_one');
+        var two_value = document.getElementById('reel_two');
+        var three_value = document.getElementById('reel_three');
+        var four_value = document.getElementById('reel_four');
+        var yanma_point_one = false;
+        var yanma_point_two = false;
+        var yanma_point_three = false;
+        var yanma_point_four = false;
+
+        var back = document.getElementById('slot');
         function time(){
-            sone = setInterval('var a = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_one\').innerHTML = a;',200);
-            stwo = setInterval('var b = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_two\').innerHTML = b;',200);
-            sthree = setInterval('var c = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_three\').innerHTML = c;',200);
-            sfour = setInterval('var d = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_four\').innerHTML = d;',200);
+            start_btn.disabled = true;
+            sone = setInterval('var a = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_one\').innerHTML = a;',500);
+            stwo = setInterval('var b = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_two\').innerHTML = b;',500);
+            sthree = setInterval('var c = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_three\').innerHTML = c;',500);
+            sfour = setInterval('var d = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_four\').innerHTML = d;',500);
         }
 
         function one(){
+            if(start_btn.disabled == true){
+            stop_btn_one.disabled = true;
             clearInterval(sone);
+            if(one_value.innerHTML == '1'){
+                yanma_point_one = true;
+                one_value.innerHTML = '<span class=\'yanma\'>1</span>';
+            }
+            if(yanma_point_one == true && yanma_point_two == true && yanma_point_three == true && yanma_point_four == true){
+                back.style.backgroundImage = 'url(img/yanma.jpg)'
+            }
+            }
         }
 
         function two(){
+            if(start_btn.disabled == true){
+            stop_btn_two.disabled = true;
             clearInterval(stwo);
+            if(two_value.innerHTML == '3'){
+                yanma_point_two = true;
+                two_value.innerHTML = '<span class=\'yanma\'>3</span>';
+            }
+            if(yanma_point_one == true && yanma_point_two == true && yanma_point_three == true && yanma_point_four == true){
+                back.style.backgroundImage = 'url(img/yanma.jpg)'
+            }
+            }
         }
 
         function three(){
+            if(start_btn.disabled == true){
+            stop_btn_three.disabled = true;
             clearInterval(sthree);
+            if(three_value.innerHTML == '1'){
+                yanma_point_three = true;
+                three_value.innerHTML = '<span class=\'yanma\'>1</span>';
+            }
+            if(yanma_point_one == true && yanma_point_two == true && yanma_point_three == true && yanma_point_four == true){
+                back.style.backgroundImage = 'url(img/yanma.jpg)'
+            }}
         }
 
         function four(){
+            if(start_btn.disabled == true){
+            stop_btn_four.disabled = true;
             clearInterval(sfour);
+            if(four_value.innerHTML == '9'){
+                yanma_point_four = true;
+                four_value.innerHTML = '<span class=\'yanma\'>9</span>';
+            }}
+            if(yanma_point_one == true && yanma_point_two == true && yanma_point_three == true && yanma_point_four == true){
+                back.style.backgroundImage = 'url(img/yanma.jpg)'
+            }
+        }
+
+        function reset(){
+            if(start_btn.disabled == true && stop_btn_one.disabled == true && stop_btn_two.disabled == true && stop_btn_three.disabled == true && stop_btn_four.disabled == true){
+                start_btn.disabled = false;
+                stop_btn_one.disabled = false;
+                stop_btn_two.disabled = false;
+                stop_btn_three.disabled = false;
+                stop_btn_four.disabled = false;
+                yanma_point_one = false;
+                yanma_point_two = false;
+                yanma_point_three = false;
+                yanma_point_four = false;
+            }
         }
     </script>
 </body>
