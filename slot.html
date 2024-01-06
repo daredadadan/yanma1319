@@ -10,7 +10,7 @@
     
 </head>
 <body>
-    <div class="monitor">
+    <div id="monitor" class="monitor">
         <iframe class="menu" src="frame.html" frameborder="0"></iframe>
         <div class="main">
     <h1>数字スロット</h1>
@@ -71,7 +71,7 @@
         var yanma_point_three = false;
         var yanma_point_four = false;
 
-        var back = document.getElementById('slot');
+        var back = document.getElementById('monitor');
         function time(){
             start_btn.disabled = true;
             sone = setInterval('var a = Math.floor(Math.random() * 9) + 1;document.getElementById(\'reel_one\').innerHTML = a;',500);
